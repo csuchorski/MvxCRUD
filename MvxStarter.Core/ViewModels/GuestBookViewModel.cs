@@ -124,7 +124,7 @@ namespace MvxStarter.Core.ViewModels
         public void UpdatePerson()
         {
             UpdatePersonFromList();
-            //PersonDA.UpdatePersonFromDB(SelectedPerson);
+            PersonDA.UpdatePersonFromDB(SelectedPerson);
             Name = String.Empty;
             Email = String.Empty;
             Country = String.Empty;
@@ -135,11 +135,6 @@ namespace MvxStarter.Core.ViewModels
             People[IndexOsoby].Name = Name;
             People[IndexOsoby].Country = Country;
             People[IndexOsoby].Email = Email;
-
-            //People[0].Name = Name;
-            //People[0].Country = Country;
-            //People[0].Email = Email;
-            //RaisePropertyChanged(() => People);
         }
         public IMvxCommand UpdatePersonCommand { get; set; }
 

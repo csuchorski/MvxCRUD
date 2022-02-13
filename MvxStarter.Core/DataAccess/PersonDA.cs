@@ -31,7 +31,7 @@ namespace MvxStarter.Core.DataAccess
         public static void UpdatePersonFromDB(PersonModel p)
         {
             using IDbConnection conn = new SqlConnection(Helper.CnnVal("PeopleDB"));
-            conn.Execute("dbo.PersonUpdate", new { PersonID = p.PersonID, Name = p.Name, Country = p.Country, Email = p.Email });
+            conn.Execute("dbo.PersonUpdate", new { PersonID = p.PersonID, Name = p.Name, Country = p.Country, Email = p.Email }, commandType: CommandType.StoredProcedure);
         }
         public static PersonModel FindLastPerson()
         {
